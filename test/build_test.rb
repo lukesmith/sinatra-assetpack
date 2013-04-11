@@ -19,6 +19,7 @@ class BuildTest < UnitTest
     assert File.read(File.join(app.root, 'public/js/hello.2.js')).include?('$(function() { alert("Hello.2"); });')
     assert File.read(File.join(app.root, 'public/js/hello-3.js')).include?('$(function() { alert("Hello-3"); });')
     assert File.read(File.join(app.root, 'public/js/hello-world.js')).include?('$(function() { alert("Hello-World"); });')
+    assert File.read(File.join(app.root, 'public/js/jquery.myplugin.1.8.0.js')).include?('$(function() { alert("My jquery plugin"); });')
 
     assert Dir["#{app.root}/public/images/background.*.jpg"].first
     assert Dir["#{app.root}/public/images/email.*.png"].first
