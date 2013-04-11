@@ -16,6 +16,9 @@ class BuildTest < UnitTest
     assert Dir[File.join(app.root, 'public/js/app.*.js')].first
 
     assert File.read(File.join(app.root, 'public/js/app.js')).include?('function(){alert("Hello");')
+    assert File.read(File.join(app.root, 'public/js/hello.2.js')).include?('$(function() { alert("Hello.2"); });')
+    assert File.read(File.join(app.root, 'public/js/hello-3.js')).include?('$(function() { alert("Hello-3"); });')
+    assert File.read(File.join(app.root, 'public/js/hello-world.js')).include?('$(function() { alert("Hello-World"); });')
 
     assert Dir["#{app.root}/public/images/background.*.jpg"].first
     assert Dir["#{app.root}/public/images/email.*.png"].first
